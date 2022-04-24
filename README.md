@@ -7,7 +7,7 @@ The "Hello, World" program is the first program you learn to write in many langu
 So create a program that prompts for your name and prints a greeting using your name.
 
 ### Example Output:
-What is your name? Jeff
+What is your name? Jeff  
 Hello, Jeff, nice to meet you!
 
 ### Constraint:
