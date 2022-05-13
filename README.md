@@ -20,3 +20,12 @@ To run:
 cd say-hello
 cargo run
 ```
+
+### Output:
+When the program is run, it will pause after displaying the initial greeting to wait for the user to input their name.
+
+```
+What is your name? *name*
+Hello, *name*, nice to meet you!
+```
+
