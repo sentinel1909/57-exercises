@@ -13,27 +13,36 @@ use std::io::{self, Write};
 
 /// function that retrieves user input
 fn get_name() -> String {
-    print!("What is your name? ");
-    io::stdout().flush().unwrap();
     let mut buffer = String::new();
-    io::stdin().read_line(&mut buffer).unwrap();
-    buffer
+    print!("What is your name? ");
+    io::stdout().flush().expect("There was an I/O error and the buffer could not be flushed.");
+    io::stdin().read_line(&mut buffer).expect("Unable to read your name...");
+    buffer.trim().to_string()
 }
+
 /// function that builds the output string
 fn build_greeting(name: String) -> String {
     let mut greeting = "Hello, ".to_owned();
-    greeting.push_str(&name[..].trim());
+    greeting.push_str(&name[..]);
     greeting.push_str(", nice to meet you!");
     greeting
 }
-/// function that displays the output string 
+/// function that displays the output string
 fn print_greeting(greeting: String) {
     println!("{}", greeting);
 }
 /// main program
 fn main() {
-    print_greeting(build_greeting(get_name()));
-
+    loop {
+        let name = get_name();
+        if name.is_empty() {
+            println!("Sorry, name cannot be empty, please try again.")
+        } else {
+            let greeting = build_greeting(name);
+            print_greeting(greeting);
+            break;
+        }
+    }
 }
 
 // tests

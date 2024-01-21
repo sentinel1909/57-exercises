@@ -33,11 +33,11 @@ fn main() {
                     break;
                 } else {
                     println!("Please enter a string.");
-                }                
+                }
             }
-            Err(_error) => println!("There was an error.")
-        }        
-    } 
+            Err(_error) => println!("There was an error."),
+        }
+    }
 }
 
 // tests

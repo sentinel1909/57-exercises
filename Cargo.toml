@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "counting-characters",
+  "say-hello",
+]
+
+resolver = "2"
